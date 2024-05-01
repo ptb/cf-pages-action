@@ -2,7 +2,7 @@
 branding:
   color: orange
   icon: upload-cloud
-description: Publish to Cloudflare Pages
+description: Publish to Cloudflare Pages (@ptb)
 inputs:
   accountId:
     description: Cloudflare Account ID
