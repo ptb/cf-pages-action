@@ -16,7 +16,11 @@ inputs:
   directory:
     description: The directory of static assets to upload
     required: true
+  environmentName:
+    description: Override the environment name to use
+    required: false
   gitHubToken:
+    default: ${{ github.token }}
     description: GitHub Token
     required: false
   projectName:
@@ -24,10 +28,6 @@ inputs:
     required: true
   workingDirectory:
     description: The working directory in which to run Wrangler
-    required: false
-  wranglerVersion:
-    default: '3'
-    description: The version of Wrangler to use
     required: false
 name: Cloudflare Pages GitHub Action (@ptb)
 outputs:
