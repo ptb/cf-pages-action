@@ -2,7 +2,7 @@
 branding:
   color: orange
   icon: upload-cloud
-description: Publish to Cloudflare Pages (@ptb)
+description: Publish to Cloudflare Pages
 inputs:
   accountId:
     description: Cloudflare Account ID
@@ -29,7 +29,7 @@ inputs:
     default: '3'
     description: The version of Wrangler to use
     required: false
-name: Cloudflare Pages GitHub Action
+name: Cloudflare Pages GitHub Action (@ptb)
 outputs:
   alias:
     description: The alias if it exists otherwise the deployment URL
