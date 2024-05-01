@@ -1,10 +1,10 @@
-import { getInput, setOutput, setFailed, summary } from "@actions/core";
-import type { Project, Deployment } from "@cloudflare/types";
+import { getInput, setFailed, setOutput, summary } from "@actions/core";
 import { context, getOctokit } from "@actions/github";
+import type { Deployment, Project } from "@cloudflare/types";
+import path from "node:path";
+import { env } from "process";
 import shellac from "shellac";
 import { fetch } from "undici";
-import { env } from "process";
-import path from "node:path";
 
 type Octokit = ReturnType<typeof getOctokit>;
 
@@ -46,7 +46,7 @@ try {
       $ export CLOUDFLARE_ACCOUNT_ID="${accountId}"
     }
   
-    $$ npx wrangler@${wranglerVersion} pages publish "${directory}" --project-name="${projectName}" --branch="${branch}"
+    $$ npx wrangler@${wranglerVersion} pages deploy "${directory}" --project-name="${projectName}" --branch="${branch}"
     `;
 
 		const response = await fetch(
